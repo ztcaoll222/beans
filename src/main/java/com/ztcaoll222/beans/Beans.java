@@ -38,7 +38,7 @@ public class Beans {
 
     /**
      * 获得要设置字段的 set 函数
-     *
+     * <p>
      * 因为有可能出现字段的包装类而对应的 set 函数是其基本类型, 所以两种都搜索一下
      *
      * @param key    字段名
@@ -70,14 +70,14 @@ public class Beans {
 
     /**
      * 获得要设置的字段
-     *
+     * <p>
      * 如果
-     * @see com.ztcaoll222.beans.Beans#findSetMethod(java.lang.String, java.lang.Class, java.lang.Object, java.lang.Class)
-     * 没有找到对应是 set 函数, 那么就会调用这个函数直接给字段赋值
      *
      * @param key    字段名
      * @param tClass bean 的 class
      * @param o      bean 的实例
+     * @see com.ztcaoll222.beans.Beans#findSetMethod(java.lang.String, java.lang.Class, java.lang.Object, java.lang.Class)
+     * 没有找到对应是 set 函数, 那么就会调用这个函数直接给字段赋值
      */
     private static <T> Optional<AbstractSetMethod<Object>> findSetField(String key, Class<T> tClass, Object o) {
         try {
